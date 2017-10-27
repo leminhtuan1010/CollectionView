@@ -14,7 +14,7 @@
 * Khởi tạo Collection view 
 * Khởi tạo navigation
 
-![](/Screen Shot 2017-10-27 at 11.51.54 PM.png)
+![](.../Screen Shot 2017-10-27 at 11.51.54 PM.png)
 
 ### Bước 2:
 
