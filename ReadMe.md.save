@@ -22,7 +22,7 @@
 
 Tạo một func condigure có tác dụng hứng các chuỗi ảnh để hiển thị lên các Cell
 
-\*\*\*
+***
 
 func configureCell\(\_ name: String\){
 
@@ -30,18 +30,18 @@ photoFruit.image = UIImage\(named: name\)
 
  }
 
-\*\*\*
+***
 
 * Gọi cell vừa costom lên trên CollectionView vừa được khởi tạo.
 
-\*\*\*  
+***  
 collectionView.register\(UINib.init\(nibName: "CollectionView", bundle: nil\), forCellWithReuseIdentifier: "CollectionView"\)
 
 \*\*\*
 
 * Truyền dữ liệu lên trên Cell và hiển thị số Cell trên Collection
 
-\*\*\*
+***
 
 func collectionView\(\_ collectionView: UICollectionView, numberOfItemsInSection section: Int\) -&gt;Int {
 
@@ -59,14 +59,14 @@ return Cell
 
  }
 
-\*\*\*
+***
 
 ### Bước 3:
 
 * Tạo một hàm để hứng dữ liệu khi click vào các Cell :
 
 khởi tạo một biến ImageView có kiểu String để hứng dữ liệu từ Cell về .Sau khi khởi tạo thì chúng ta hiển thị dữ liệu lên trên màn hình dứoi đúng dạng hình ảnh với các tham số đã được nhận tư Cell.  
-\*\*\*
+***
 
 var imageView = String\(\)
 
@@ -80,11 +80,11 @@ viewImg.clipsToBounds =true
 
 viewImg.image = UIImage\(named: imageView\)
 
-\*\*\*
+***
 
 * Truyền dữ liệu từ Collection View sang View ảnh bằng cách sử dụng hàm didSelectItemAt indexPath
 
-\*\*\*
+***
 
 func collectionView\(\_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath\) {
 
@@ -96,12 +96,12 @@ let viewCollection = ViewImageViewConroller\(nibName: "ViewImageViewConroller", 
 
  }
 
-\*\*\*
+***
 
 ### Bước 4:
 
 * Thuộc tính của scrollDirection trong collectionView nó đã tự lưu trạng thái của chính nó giống như giá trị true và false chính vì thế chúng ta chỉ cần if else để chuyển đổi trạng thái cho chúng.  
-  \*\*\*
+  ***
 
   if flowLayOut.scrollDirection == .vertical {
 
@@ -115,7 +115,7 @@ let viewCollection = ViewImageViewConroller\(nibName: "ViewImageViewConroller", 
 
    }
 
-\*\*\*
+***
 
 * Lưu ý khi chúng ta làm như vậy thì nhớ phải xét lại giá trị của hàm khi ấn nút.
 
