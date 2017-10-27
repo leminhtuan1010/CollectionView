@@ -24,9 +24,9 @@ Tạo một func condigure có tác dụng hứng các chuỗi ảnh để hiể
 
 ```
 
-func configureCell\(\_ name: String\){
+func configureCell(_ name: String){
 
-photoFruit.image = UIImage\(named: name\)
+photoFruit.image = UIImage(named: name)
 
  }
 
@@ -35,7 +35,7 @@ photoFruit.image = UIImage\(named: name\)
 * Gọi cell vừa costom lên trên CollectionView vừa được khởi tạo.
 
 ```
-collectionView.register\(UINib.init\(nibName: "CollectionView", bundle: nil\), forCellWithReuseIdentifier: "CollectionView"\)
+collectionView.register(UINib.init(nibName: "CollectionView", bundle: nil), forCellWithReuseIdentifier: "CollectionView")
 
 ```
 
@@ -43,17 +43,17 @@ collectionView.register\(UINib.init\(nibName: "CollectionView", bundle: nil\), f
 
 ```
 
-func collectionView\(\_ collectionView: UICollectionView, numberOfItemsInSection section: Int\) -&gt;Int {
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)-> Int {
 
 returndata.count
 
  }
 
-func collectionView\(\_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath\) -&gt;UICollectionViewCell {
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-guardlet Cell = collectionView.dequeueReusableCell\(withReuseIdentifier: "CollectionView", for: indexPath\) as? CollectionViewelse {returnUICollectionViewCell\(\)}
+guardlet Cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionView", for: indexPath) as? CollectionViewelse {returnUICollectionViewCell()}
 
- Cell.configureCell\(data\[indexPath.item\]\)
+ Cell.configureCell(data[indexPath.item])
 
 return Cell
 
@@ -68,30 +68,30 @@ return Cell
 khởi tạo một biến ImageView có kiểu String để hứng dữ liệu từ Cell về .Sau khi khởi tạo thì chúng ta hiển thị dữ liệu lên trên màn hình dứoi đúng dạng hình ảnh với các tham số đã được nhận tư Cell.  
 ```
 
-var imageView = String\(\)
+var imageView = String()
 
-overridefunc viewDidLoad\(\) {
+overridefunc viewDidLoad() {
 
-super.viewDidLoad\(\)
+super.viewDidLoad()
 
 viewImg.layer.cornerRadius =viewImg.frame.size.width /2
 
 viewImg.clipsToBounds =true
 
-viewImg.image = UIImage\(named: imageView\)
+viewImg.image = UIImage(named: imageView)
 
 ```
 
 * Truyền dữ liệu từ Collection View sang View ảnh bằng cách sử dụng hàm didSelectItemAt indexPath
 
 ```
-func collectionView\(\_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath\) {
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-let viewCollection = ViewImageViewConroller\(nibName: "ViewImageViewConroller", bundle: nil\)
+let viewCollection = ViewImageViewConroller(nibName: "ViewImageViewConroller", bundle: nil)
 
- viewCollection.imageView = data\[indexPath.row\]
+ viewCollection.imageView = data[indexPath.row]
 
- navigationController?.pushViewController\(viewCollection, animated:true\)
+ navigationController?.pushViewController(viewCollection, animated:true)
 
  }
 
